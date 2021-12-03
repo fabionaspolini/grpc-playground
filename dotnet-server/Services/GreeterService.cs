@@ -1,5 +1,5 @@
 using Grpc.Core;
-using dotnet_server;
+using dotnet_shared;
 
 namespace dotnet_server.Services;
 
@@ -15,7 +15,7 @@ public class GreeterService : Greeter.GreeterBase
     {
         return Task.FromResult(new HelloReply
         {
-            Message = "Hello " + request.Name
+            Message = $"Hello {request.Nome}, sua é idade é {request.Idade}"
         });
     }
 }
